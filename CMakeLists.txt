@@ -1,8 +1,10 @@
 if (FIPS_MACOS OR FIPS_WINDOWS OR FIPS_LINUX)
 
     fips_begin_lib(libuv)
-
-        #include_directories(libuv/include)
+        include_directories(
+            libuv/include
+            libuv/src
+        )
 
         fips_dir(libuv/include)
         fips_files(
