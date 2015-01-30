@@ -1,0 +1,8 @@
+#
+# fips-libuv
+#
+---
+exports:
+    header-dirs: [ libuv/include ]
+    modules :
+        libuv: .
