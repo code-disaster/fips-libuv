@@ -58,6 +58,42 @@ if (FIPS_MACOS OR FIPS_WINDOWS OR FIPS_LINUX)
             )
         endif()
 
+        if (FIPS_LINUX)
+            add_definitions(-D_GNU_SOURCE)
+
+            fips_dir(libuv/include)
+            fips_files(
+                uv-linux.h
+            )
+
+            fips_dir(libuv/src/unix)
+            fips_files(
+                linux-core.c
+                linux-inotify.c
+                linux-syscalls.c
+                linux-syscalls.h
+                proctitle.c
+            )
+        endif()
+
+        if (FIPS_MACOS)
+            add_definitions(-D_DARWIN_USE_64_BIT_INODE=1 -D_DARWIN_UNLIMITED_SELECT=1)
+
+            fips_dir(libuv/include)
+            fips_files(
+                uv-darwin.h
+            )
+
+            fips_dir(libuv/src/unix)
+            fips_files(
+                darwin.c
+                darwin-proctitle.c
+                fsevents.c
+                kqueue.c
+                proctitle.c
+            )
+        endif()
+
         if (FIPS_WINDOWS)
             add_definitions(-DWIN32_LEAN_AND_MEAN)
 
