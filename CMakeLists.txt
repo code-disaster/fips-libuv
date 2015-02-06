@@ -139,7 +139,7 @@ if (FIPS_MACOS OR FIPS_WINDOWS OR FIPS_LINUX)
                 winsock.h
             )
 
-            fips_deps(iphlpapi psapi)
+            fips_libs(iphlpapi psapi)
         endif()
 
     fips_end_lib()
