@@ -1,7 +1,7 @@
 if (FIPS_MACOS OR FIPS_WINDOWS OR FIPS_LINUX)
 
     fips_begin_lib(libuv)
-        include_directories(
+        fips_include_directories(
             libuv/include
             libuv/src
         )
