@@ -145,7 +145,7 @@ if (FIPS_MACOS OR FIPS_WINDOWS OR FIPS_LINUX)
     fips_end_lib()
 
     if (FIPS_MSVC)
-        set_target_properties(libuv PROPERTIES COMPILE_FLAGS "/wd4054 /wd4100 /wd4127 /wd4201 /wd4204 /wd4210 /wd4242 /wd4244 /wd4245 /wd4389 /wd4668 /wd4996 /wd4701 /wd4702 /wd4703")
+        set_target_properties(libuv PROPERTIES COMPILE_FLAGS "/wd4054 /wd4100 /wd4127 /wd4201 /wd4204 /wd4210 /wd4242 /wd4244 /wd4245 /wd4267 /wd4389 /wd4668 /wd4996 /wd4701 /wd4702 /wd4703")
     endif()
 
 endif()
